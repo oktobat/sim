@@ -1,0 +1,383 @@
+@charset "utf-8";
+@import url('reset.css');
+
+body,
+html,
+#wrap {
+    height: 100%;
+}
+
+.row {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+/*헤더구역*/
+.header-outer {
+    /* position: fixed; width: 100%; z-index: 99999999; */
+    background: rgba(0, 0, 0, 1);
+} *
+
+#header {
+    position: relative;
+    height: 112px;
+    
+}
+
+#header>h1 {
+    font-size: 30px;
+    color: gold;
+    font-family: 'Major Mono Display', monospace;
+    letter-spacing: 5px;
+    padding-top: 20px;
+}
+
+#header>h1 span {
+    display: block;
+    padding: 0 40px;
+}
+
+#header .open-gnb {
+    display: none;
+}
+
+#header .nav {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#header .nav>h1 {
+    display: none;
+}
+
+#header .nav .depth1>li {
+    display: inline-block;
+}
+
+#header .nav .depth1>li>a {
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: gold;
+    padding: 0px 40px;
+}
+
+
+/*아웃레이어*/
+.outlayer {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.outlayer.on {
+    display: block;
+}
+
+
+/* 섹션 메인 슬라이드 구역*/
+.section-outer .slide {
+    position: relative;
+}
+
+.section-outer .section:nth-child(1) .slide {
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.section-outer .section:nth-child(1) .slide1 {
+    background-image: url(../img/architecture-1850129_1920.jpg)
+}
+
+.section-outer .section:nth-child(1) .slide2 {
+    background-image: url(../img/arian-darvishi-wh-RPfR_3_M-unsplash.jpg);
+}
+
+.section-outer .section:nth-child(1) .slide3 {
+    background-image: url(../img/martin-katler-mJLIzYB8brw-unsplash.jpg);
+}
+
+/* 화살표 슬라이드*/
+.slide-outer {
+    position: relative;
+}
+
+.slide-outer .marrow {
+    font-size: 50px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    opacity: 0.8;
+}
+
+.slide-outer .prevArrow {
+    left: 10%;
+    z-index: 9999999;
+}
+
+.slide-outer .nextArrow {
+    right: 10%;
+}
+
+/* 동그라미 박스*/
+.slide-outer .slick-dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.slide-outer .slick-dots li {
+    display: inline-block;
+}
+
+.slide-outer .slick-dots li button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    text-indent: -99999px;
+    overflow: hidden;
+    margin: 0 5px;
+}
+
+.slide-outer .slick-dots li.slick-active button {
+    background: gold;
+    width: 40px;
+    border-radius: 50px;
+}
+
+/* 동그라리 자동 재생 버튼*/
+.slide-outer .plpa {
+    font-size: 15px;
+    color: #fff;
+    background: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: 55px;
+}
+
+/* 텍스트 박스 애니메이션*/
+.slide-outer .slide .text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    opacity: 0;
+}
+
+.slide-outer .slide.slide.slick-active .text {
+    opacity: 1;
+}
+
+.slide-outer .slide .text p:nth-child(1) {
+    font-size: 3.75vw;
+    text-shadow: 2px 2px 5px #555;
+    padding-bottom: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.slide-outer .slide .text p:nth-child(2) {
+    font-size: 20px;
+    margin-top: 20px;
+    letter-spacing: 6px;
+}
+
+/*슬라이드 섹션2*/
+ /* .section-outer .section:nth-child(2) {
+   background: #000;
+}   */
+.portfolio h2 {
+    font-size: 3.75vw;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.portfolio ul.gellary {
+    height: 100%;
+    padding-bottom:100PX ;
+}
+
+.portfolio ul.gellary li {
+    float: left;
+    width: 25%;
+    height: 40%;
+    overflow: hidden;
+    padding: 10px;
+    margin-bottom: 1%;
+}
+
+/*갤러리 팝업스타일*/
+.portfolio .gellaryPopup {
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999999999;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.portfolio .gellaryPopup.on {
+    opacity: 1;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    overflow: visible;
+}
+
+.gellaryPopup .popuplist {
+    position: absolute;
+    top: 50%;
+    /* left: 50%; width: 30%; transform: translate(-50%, -50%); */
+    left: 35%;
+    right: 35%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.gellaryPopup .popuplist .close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 30px;
+    color: #fff;
+    background: none;
+    cursor: pointer;
+}
+
+.gellaryPopup .popuplist .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #fff;
+    background: none;
+    cursor: pointer;
+
+}
+
+.gellaryPopup .popuplist .prev {
+    left: -40px;
+}
+
+.gellaryPopup .popuplist .next {
+    right: -40px;
+}
+
+/*어빌리티 박스 스타일 추가*/ /*반응형으로 변환 했을 때 스타일 가로 적용 추후 예정*/
+.section-outer .section:nth-child(3){
+    background: cornsilk;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+.skillcontainer h2 {
+    font-size: 3vw;
+    margin: 0 auto;
+}
+
+.skillcontainer {
+    text-align: center;
+}
+.skillcontainer p {
+    font-size: 15px; font-weight: bold; 
+} /* 글씨 크기 추후 수정 반응형 일때 글시 크기 다시 설정  */
+.skillcontainer > div {
+    height: 80%; width: 10%; display: inline-block;
+  
+}
+.skillcontainer .score {
+    display: inline-block;
+    width: 50%;
+    height: 500px;
+    text-align: center;
+    position: relative;
+}
+.skillcontainer .myscore {
+    height: 0%; width: 100%; position: absolute; bottom: 0; left: 0;
+    font-size: 20px; padding-top: 10px; opacity: 0;
+}
+.skillcontainer .html .myscore {background: crimson;
+animation: htmlscore 1s both;}
+.skillcontainer .css .myscore {background: blue;
+    animation: cssscore 1s both 0.5s;}
+.skillcontainer .js .myscore{background: gold;
+    animation: jsscore 1s both 1s;}
+.skillcontainer .jq .myscore {background: blueviolet;
+    animation: jqscore 1s both 1.5s;}
+.skillcontainer .react .myscore {background: rosybrown;
+    animation: reactscore 1s both 2s;}
+.skillcontainer .photoshop .myscore {background: hotpink;
+     animation:photoshopscore 1s both 2.5s;}
+.skillcontainer .illustrator .myscore {background:yellowgreen;
+    animation:illustratorscore 1s both 3s;}
+.skillcontainer .xd .myscore {background:cornflowerblue;
+     animation:xdscore 1s both 3.5s;}
+
+@keyframes htmlscore{
+    0%{height: 0;}
+    100%{height: 90%; opacity: 1;}
+}
+@keyframes cssscore{
+    0%{height: 0;}
+    100%{height: 90%; opacity: 1;}
+}
+@keyframes jsscore{
+    0%{height: 0;}
+    100%{height: 90%; opacity: 1;}
+}
+@keyframes jqscore{
+    0%{height: 0;}
+    100%{height: 90%; opacity: 1;}
+}
+@keyframes reactscore{
+    0%{height: 0;}
+    100%{height: 90%; opacity: 1;}
+}
+@keyframes photoshopscore{
+    0%{height: 0;}
+    100%{height: 90%; opacity: 1;}
+}
+@keyframes illustratorscore{
+    0%{height: 0;}
+    100%{height: 90%; opacity: 1;}
+}
+@keyframes xdscore{
+    0%{height: 0;}
+    100%{height: 90%; opacity: 1;}
+}
+
+
+.Contactbox {padding: 10px 0; height: 450px; text-align: center; }
+.Contactbox h1 {font-size: 50px; padding-bottom:15px ;}
+.Contactbox h2{font-size: 35px;  padding-bottom:15px;
+animation:fadeInRightBig 1s both 5s;}
+.Contactbox h3 {font-size:35px ;  padding-bottom:15px;
+    animation:fadeInRightBig 1s both 5.5s;}
+
+
+.gotop {display: none ;position: fixed; right:10px; bottom: 10px; 
+    z-index: 999999999999; opacity: 0; text-align: center; font-size: 25px;} 
+.gotop.on {display: block;}
+.gotop i{ width: 100px; cursor: pointer;}
